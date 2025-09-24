@@ -1983,3 +1983,71 @@ body {
     opacity: 1;
   }
 }
+
+/* Estilos para el texto personalizado */
+.love-message {
+  position: fixed;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  text-align: center;
+  animation: fadeInText 2s ease-in-out 1s both, floatText 4s ease-in-out infinite 3s;
+}
+
+.love-text {
+  font-family: 'Dancing Script', 'Brush Script MT', cursive, serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #FFD700;
+  text-shadow: 
+    0 0 10px rgba(255, 215, 0, 0.8),
+    0 0 20px rgba(255, 215, 0, 0.6),
+    0 0 30px rgba(255, 215, 0, 0.4),
+    2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin: 0;
+  padding: 20px;
+  background: linear-gradient(45deg, rgba(255, 182, 193, 0.1), rgba(255, 105, 180, 0.1));
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  border: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes floatText {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0px);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+/* Responsive para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .love-text {
+    font-size: 2.5rem;
+    padding: 15px;
+  }
+  
+  .love-message {
+    top: 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .love-text {
+    font-size: 2rem;
+    padding: 10px;
+  }
+}
